@@ -6,6 +6,16 @@ const ALL_INGREDIENTS = gql`
 query Aliments {
   aliments {
     name
+    description
+    picture
+    vegetarian
+    vegan
+    local
+    bio
+    preview
+    category {
+      name
+    }
   }
 }`
 
