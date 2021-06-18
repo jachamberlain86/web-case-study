@@ -7,6 +7,7 @@
     "@sentry/react": "^5.27.1",
     "dayjs": "^1.8.28",
     "graphql": "^14.6.0",
+    "moment": "^2.29.1",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",

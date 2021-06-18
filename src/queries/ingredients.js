@@ -8,11 +8,11 @@ query Aliments {
     name
     description
     picture
+    createdAt
     vegetarian
     vegan
     local
     bio
-    preview
     category {
       name
     }
