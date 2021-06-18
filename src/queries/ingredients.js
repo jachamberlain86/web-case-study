@@ -5,6 +5,7 @@ import {
 const ALL_INGREDIENTS = gql`
 query Aliments {
   aliments {
+    id
     name
     description
     picture

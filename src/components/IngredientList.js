@@ -15,19 +15,14 @@ export default function IngredientList() {
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: { error.message }</p>
 
-  console.log(data.aliments.preview)
-
-
-
   const ingredientCards = data.aliments.map((ingredient) => {
     return (
       <IngredientCard key={ingredient.id} ingredient={ingredient}></IngredientCard>
     )
   })
 
-
   return (
-    <div>
+    <div className='ingredient-list__container'>
 
     {ingredientCards}
 

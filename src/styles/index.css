@@ -1,6 +1,16 @@
 @import "reset.css";
 @import "variables.scss";
 
+:root {
+  --font-color: #222;
+  --font-color-light: #979797;
+  --light-grey: #ebebeb;
+  --lighter-grey: #f2f2f2;
+  --mid-grey: #cad6e3;
+  --dark-grey: #222;
+  --green: #2b9348;
+}
+
 #root {
   min-height: 100%;
 }
@@ -9,4 +19,86 @@
   min-height: 100vh;
   font-family: "Quicksand", sans-serif;
   padding: 2em;
+  background-color: var(--light-grey);
+  color: var(--font-color)
+}
+
+.ingredient-list__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ingredient-card__main-container {
+  width: 20rem;
+  height: 28rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  word-wrap: normal;
+  margin: 0.5rem;
+  background-color: var(--lighter-grey);
+  border-style: solid;
+  border-width: 0.1px;
+  border-color: var(--mid-grey);
+}
+
+.ingredient-card__image {
+  height: 15rem;
+  object-fit: cover;
+  border-radius: 6px 6px 0 0 ;
+  background-color: var(--mid-grey);
+}
+
+.ingredient-card__content-container {
+  height: 7rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem 0.8rem 0 0.8rem;
+}
+
+.ingredient-card__text {
+}
+
+.ingredient-card__title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+
+.ingredient-card__body {
+  font-size: 1rem;
+  text-overflow: ellipsis;
+}
+
+.ingredient-card__body--date {
+  color: var(--font-color-light);
+}
+
+.ingredient-card__badge-container {
+  height: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0.8rem 0.8rem 0.8rem;
+  align-content: center;
+}
+
+.ingredient-card__badge {
+  font-size: 0.8rem;
+  background-color: var(--green);
+  color: var(--light-grey);
+  padding: 0.5rem;
+  margin-right: 0.5rem;;
+  border-radius: 0.3rem;
+}
+
+.ingredient-card__date-container {
+  height: 3rem;
+  justify-self:flex-end;
+  padding: 0.8rem;
+  align-content: center;
+  justify-content: center;
+  border-top-style: solid;
+  border-width: 0.1px;
+  border-color: var(--mid-grey);
 }
