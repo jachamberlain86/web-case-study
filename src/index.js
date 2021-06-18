@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 import {
   ApolloClient,
   ApolloProvider,
@@ -9,23 +9,27 @@ import {
   ApolloLink,
   Observable,
   HttpLink
-} from '@apollo/client';
-import { WebSocketLink } from '@apollo/client/link/ws';
-import { getMainDefinition } from '@apollo/client/utilities';
-import { onError } from '@apollo/client/link/error';
-import dayjs from 'dayjs';
-import WeekOfYear from 'dayjs/plugin/weekOfYear';
+} from "@apollo/client";
+import { WebSocketLink } from "@apollo/client/link/ws";
+import { getMainDefinition } from "@apollo/client/utilities";
+import { onError } from "@apollo/client/link/error";
+import dayjs from "dayjs";
+import WeekOfYear from "dayjs/plugin/weekOfYear";
 
-import fr from 'dayjs/locale/fr';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import fr from "dayjs/locale/fr";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
 
-import './styles/index.css';
+import "./styles/index.css";
 
 dayjs.locale(fr);
 dayjs.extend(WeekOfYear);
 
-const { REACT_APP_BACKOFFICE_URL, REACT_APP_API_HTTP_URL, REACT_APP_API_WS_URL } = process.env;
+const {
+  REACT_APP_BACKOFFICE_URL,
+  REACT_APP_API_HTTP_URL,
+  REACT_APP_API_WS_URL
+} = process.env;
 
 const httpLink = new HttpLink({
   uri: `${REACT_APP_API_HTTP_URL}/graphql`
@@ -42,17 +46,20 @@ const link = split(
   // split based on operation type
   ({ query }) => {
     const definition = getMainDefinition(query);
-    return definition.kind === 'OperationDefinition' && definition.operation === 'subscription';
+    return (
+      definition.kind === "OperationDefinition" &&
+      definition.operation === "subscription"
+    );
   },
   wsLink,
   httpLink
 );
 
 const request = async operation => {
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem("token");
   operation.setContext({
     headers: {
-      authorization: token ? `Bearer ${token}` : ''
+      authorization: token ? `Bearer ${token}` : ""
     }
   });
 };
@@ -85,9 +92,9 @@ const client = new ApolloClient({
         graphQLErrors.map(({ message, locations, path }) => {
           if (
             [
-              'Context creation failed: Your session expired. Sign in again.',
-              'Not authenticated as user.',
-              'Your session expired. Sign in again.'
+              "Context creation failed: Your session expired. Sign in again.",
+              "Not authenticated as user.",
+              "Your session expired. Sign in again."
             ].includes(message)
           ) {
             localStorage.clear();
@@ -118,7 +125,7 @@ ReactDOM.render(
       <App />
     </BrowserRouter>
   </ApolloProvider>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change

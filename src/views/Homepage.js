@@ -1,4 +1,5 @@
 import React from 'react';
+import IngredientList from '../components/IngredientList.js'
 
 const Homepage = () => {
   return (
@@ -6,7 +7,9 @@ const Homepage = () => {
       <div>
         Homepage
       </div>
-      <div>You can create your stuff here</div>
+      <div>
+      <IngredientList></IngredientList>
+      </div>
     </>
   )
 }
