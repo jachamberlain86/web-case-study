@@ -1,14 +1,14 @@
-import React from 'react';
-import IngredientList from '../components/IngredientList.js'
+import React from "react";
+import IngredientList from "../components/IngredientList.js";
 
 const Homepage = () => {
   return (
     <>
       <div>
-      <IngredientList></IngredientList>
+        <IngredientList></IngredientList>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default Homepage;

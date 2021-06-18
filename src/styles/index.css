@@ -20,7 +20,7 @@
   font-family: "Quicksand", sans-serif;
   padding: 2em;
   background-color: var(--light-grey);
-  color: var(--font-color)
+  color: var(--font-color);
 }
 
 .ingredient-list__main-container {
@@ -33,7 +33,6 @@
   display: flex;
   flex-direction: column;
   margin: 4rem;
-
 }
 .ingredient-list__button-container {
   display: flex;
@@ -83,7 +82,7 @@
 .ingredient-card__image {
   height: 15rem;
   object-fit: cover;
-  border-radius: 6px 6px 0 0 ;
+  border-radius: 6px 6px 0 0;
   background-color: var(--mid-grey);
 }
 
@@ -98,7 +97,6 @@
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
-
 
 .ingredient-card__body {
   font-size: 1rem;
@@ -122,13 +120,13 @@
   background-color: var(--green);
   color: var(--light-grey);
   padding: 0.5rem;
-  margin-right: 0.5rem;;
+  margin-right: 0.5rem;
   border-radius: 0.3rem;
 }
 
 .ingredient-card__date-container {
   height: 3rem;
-  justify-self:flex-end;
+  justify-self: flex-end;
   padding: 0.8rem;
   align-content: center;
   justify-content: center;
