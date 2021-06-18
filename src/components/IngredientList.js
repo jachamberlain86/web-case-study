@@ -11,7 +11,6 @@ export default function IngredientList() {
   const { loading, error, data } = useQuery(ALL_INGREDIENTS)
 
   const [ search, setSearch ] = useState('');
-  const [ ingredients, setIngredients ] = useState([])
   const [ ingredientCards, setIngredientCards ] = useState([])
   const [ vegetarianActive, setVegetarianActive ] = useState(false)
   const [ veganActive, setVeganActive ] = useState(false)
@@ -20,14 +19,9 @@ export default function IngredientList() {
 
   useEffect(() => {
     if (data) {
-      setIngredients(data.aliments)
       updateIngredientCards(data.aliments)
     }
-  }, [data])
-
-  useEffect(() => {
-    updateIngredientCards(ingredients)
-  }, [search, vegetarianActive, veganActive, localActive, bioActive])
+  }, [data, search, vegetarianActive, veganActive, localActive, bioActive])
 
   const updateIngredientCards = (ingredientsArr) => {
     const clonedArr = cloneIngredientsArr(ingredientsArr);
